@@ -68,6 +68,9 @@ namespace TIC_CEA_SYSTEM.View
         private void frmAbriInsidencia_Load(object sender, EventArgs e)
         {
             CleanAll();
+
+
+
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
