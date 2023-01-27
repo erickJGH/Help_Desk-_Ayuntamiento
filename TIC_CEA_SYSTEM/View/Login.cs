@@ -29,7 +29,7 @@ namespace TIC_CEA_SYSTEM
         cPersona ControllerPersona = new cPersona();
         mPersona ModelPersona = new mPersona();
 
-
+        public static string PrivilegioL;
         private void Enter()
         {
             txtPassword.UseSystemPasswordChar = true;
@@ -42,6 +42,7 @@ namespace TIC_CEA_SYSTEM
                     ControllerPersona.usuario = txtUser.Text;
                     ControllerPersona.password = txtPassword.Text;
                     cPersona Result = ModelLogin.Authentichate(ControllerPersona);
+
                     if (Result.usuario != "")
                     {
                         if (Result.password != null)
@@ -67,6 +68,7 @@ namespace TIC_CEA_SYSTEM
 
                                 MainMenu.txtUsuario.Text = Result.usuario;
                                 MainMenu.txtPrivilegio.Text = Result.privilegio;
+                                PrivilegioL = Result.privilegio;
                                 MainMenu.txtNombre.Text = Result.Nombres;
 
                                 Welcom.ShowDialog();

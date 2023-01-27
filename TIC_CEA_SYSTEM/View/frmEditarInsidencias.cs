@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TIC_CEA_SYSTEM.Controller;
 using TIC_CEA_SYSTEM.Model;
+using TIC_CEA_SYSTEM.View;
 
 namespace TIC_CEA_SYSTEM.View
 {
@@ -16,7 +17,7 @@ namespace TIC_CEA_SYSTEM.View
     {
         cInsidencia ControllerInsidencia = new cInsidencia();
         mInsidencia ModelInsidencia = new mInsidencia();
-
+        cPersona ControllerPersona = new cPersona();
         private void ClearAll()
         {
             txtNumeroTicketConfig.Text = "";
@@ -198,22 +199,32 @@ namespace TIC_CEA_SYSTEM.View
         }
         private void btnBorrarInsidencia_Click(object sender, EventArgs e)
         {
-            DialogResult Answer = MessageBox.Show("ESTA SEGURO QUE DESEA ELIMINAR ESTA INCIDENCIA?", "ELIMINAR", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (Answer == DialogResult.Yes)
+
+
+            if (Login.PrivilegioL == "ADMINISTRADOR/A")
             {
-                int ID = Convert.ToInt32(txtNumeroTicketConfig.Text);
-                ControllerInsidencia.idInsidecias = ID;
-                if (ModelInsidencia.DeleteIncidencia(ControllerInsidencia))
+                DialogResult Answer = MessageBox.Show("ESTA SEGURO QUE DESEA ELIMINAR ESTA INCIDENCIA?", "ELIMINAR", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (Answer == DialogResult.Yes)
                 {
-                    MessageBox.Show("LA INCIDENCIA FUE ELIMINADA CORRECTAMENTE!", "CORRECTO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                    ClearAll();
-                    ShowIncidencias();
+                    int ID = Convert.ToInt32(txtNumeroTicketConfig.Text);
+                    ControllerInsidencia.idInsidecias = ID;
+                    if (ModelInsidencia.DeleteIncidencia(ControllerInsidencia))
+                    {
+                        MessageBox.Show("LA INCIDENCIA FUE ELIMINADA CORRECTAMENTE!", "CORRECTO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        ClearAll();
+                        ShowIncidencias();
+                    }
+                    else
+                    {
+                        MessageBox.Show("ERROR AL INTENTAR ELIMINAR ESTA INCIDENCIA", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("ERROR AL INTENTAR ELIMINAR ESTA INCIDENCIA", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }            
+            }
+            else
+            {
+                MessageBox.Show("USTED NO CUENTA CON LOS PRIVILEGIOS PARA BORRAR UNA INCIDENCIA", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+                        
         }
         private void btnGuardarInsidencia_Click(object sender, EventArgs e)
         {

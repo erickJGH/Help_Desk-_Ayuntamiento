@@ -345,6 +345,11 @@ namespace TIC_CEA_SYSTEM.View
             
         }
 
+        private void txtPrivilegio_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         //button exit
         private void btnSalir_Click(object sender, EventArgs e)
         {

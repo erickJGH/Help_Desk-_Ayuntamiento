@@ -247,6 +247,7 @@
             this.txtPrivilegio.Size = new System.Drawing.Size(209, 32);
             this.txtPrivilegio.TabIndex = 6;
             this.txtPrivilegio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtPrivilegio.TextChanged += new System.EventHandler(this.txtPrivilegio_TextChanged);
             // 
             // txtUsuario
             // 
