@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAgregarUsuario));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtPrivilegio = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnNuevoUsuario = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -44,11 +45,10 @@
             this.txtConfirmarPassword = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtUsuario = new System.Windows.Forms.TextBox();
-            this.txtCedula = new System.Windows.Forms.TextBox();
             this.txtApellidos = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtNombres = new System.Windows.Forms.TextBox();
-            this.txtPrivilegio = new System.Windows.Forms.TextBox();
+            this.txtCedula = new System.Windows.Forms.MaskedTextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnNuevoUsuario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCancelarUsuario)).BeginInit();
@@ -58,6 +58,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Teal;
+            this.panel1.Controls.Add(this.txtCedula);
             this.panel1.Controls.Add(this.txtPrivilegio);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.btnNuevoUsuario);
@@ -73,7 +74,6 @@
             this.panel1.Controls.Add(this.txtConfirmarPassword);
             this.panel1.Controls.Add(this.txtPassword);
             this.panel1.Controls.Add(this.txtUsuario);
-            this.panel1.Controls.Add(this.txtCedula);
             this.panel1.Controls.Add(this.txtApellidos);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.txtNombres);
@@ -82,6 +82,14 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(684, 265);
             this.panel1.TabIndex = 0;
+            // 
+            // txtPrivilegio
+            // 
+            this.txtPrivilegio.Location = new System.Drawing.Point(598, 3);
+            this.txtPrivilegio.Name = "txtPrivilegio";
+            this.txtPrivilegio.PasswordChar = '•';
+            this.txtPrivilegio.Size = new System.Drawing.Size(83, 20);
+            this.txtPrivilegio.TabIndex = 30;
             // 
             // label4
             // 
@@ -197,7 +205,7 @@
             this.cbPrivilegios.Location = new System.Drawing.Point(518, 156);
             this.cbPrivilegios.Name = "cbPrivilegios";
             this.cbPrivilegios.Size = new System.Drawing.Size(148, 21);
-            this.cbPrivilegios.TabIndex = 7;
+            this.cbPrivilegios.TabIndex = 6;
             // 
             // txtConfirmarPassword
             // 
@@ -205,7 +213,7 @@
             this.txtConfirmarPassword.Name = "txtConfirmarPassword";
             this.txtConfirmarPassword.PasswordChar = '•';
             this.txtConfirmarPassword.Size = new System.Drawing.Size(148, 20);
-            this.txtConfirmarPassword.TabIndex = 6;
+            this.txtConfirmarPassword.TabIndex = 5;
             // 
             // txtPassword
             // 
@@ -213,7 +221,7 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '•';
             this.txtPassword.Size = new System.Drawing.Size(148, 20);
-            this.txtPassword.TabIndex = 5;
+            this.txtPassword.TabIndex = 4;
             // 
             // txtUsuario
             // 
@@ -221,16 +229,7 @@
             this.txtUsuario.MaxLength = 25;
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(169, 20);
-            this.txtUsuario.TabIndex = 4;
-            // 
-            // txtCedula
-            // 
-            this.txtCedula.Location = new System.Drawing.Point(133, 158);
-            this.txtCedula.MaxLength = 13;
-            this.txtCedula.Name = "txtCedula";
-            this.txtCedula.Size = new System.Drawing.Size(169, 20);
-            this.txtCedula.TabIndex = 2;
-            this.txtCedula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCedula_KeyPress);
+            this.txtUsuario.TabIndex = 3;
             // 
             // txtApellidos
             // 
@@ -260,13 +259,13 @@
             this.txtNombres.TabIndex = 0;
             this.txtNombres.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombres_KeyPress);
             // 
-            // txtPrivilegio
+            // txtCedula
             // 
-            this.txtPrivilegio.Location = new System.Drawing.Point(598, 3);
-            this.txtPrivilegio.Name = "txtPrivilegio";
-            this.txtPrivilegio.PasswordChar = '•';
-            this.txtPrivilegio.Size = new System.Drawing.Size(83, 20);
-            this.txtPrivilegio.TabIndex = 30;
+            this.txtCedula.Location = new System.Drawing.Point(133, 160);
+            this.txtCedula.Mask = "000-0000000-0";
+            this.txtCedula.Name = "txtCedula";
+            this.txtCedula.Size = new System.Drawing.Size(169, 20);
+            this.txtCedula.TabIndex = 2;
             // 
             // frmAgregarUsuario
             // 
@@ -304,12 +303,12 @@
         private System.Windows.Forms.TextBox txtConfirmarPassword;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.TextBox txtUsuario;
-        private System.Windows.Forms.TextBox txtCedula;
         private System.Windows.Forms.TextBox txtApellidos;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtNombres;
         private System.Windows.Forms.PictureBox btnNuevoUsuario;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtPrivilegio;
+        private System.Windows.Forms.MaskedTextBox txtCedula;
     }
 }

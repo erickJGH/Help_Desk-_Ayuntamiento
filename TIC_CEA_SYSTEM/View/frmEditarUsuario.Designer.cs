@@ -50,11 +50,11 @@
             this.btnCancel = new System.Windows.Forms.PictureBox();
             this.btnSave = new System.Windows.Forms.PictureBox();
             this.cbPrivilegio = new System.Windows.Forms.ComboBox();
-            this.txtCedula = new System.Windows.Forms.TextBox();
             this.txtApellidos = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.txtCedula = new System.Windows.Forms.MaskedTextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.panel2.SuspendLayout();
@@ -67,6 +67,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Teal;
+            this.panel1.Controls.Add(this.txtCedula);
             this.panel1.Controls.Add(this.txtNombreUsuario);
             this.panel1.Controls.Add(this.txtPrivilegio);
             this.panel1.Controls.Add(this.dgvUsuarios);
@@ -84,7 +85,6 @@
             this.panel1.Controls.Add(this.btnCancel);
             this.panel1.Controls.Add(this.btnSave);
             this.panel1.Controls.Add(this.cbPrivilegio);
-            this.panel1.Controls.Add(this.txtCedula);
             this.panel1.Controls.Add(this.txtApellidos);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.txtNombre);
@@ -166,7 +166,7 @@
             this.rbActive.Location = new System.Drawing.Point(9, 10);
             this.rbActive.Name = "rbActive";
             this.rbActive.Size = new System.Drawing.Size(79, 17);
-            this.rbActive.TabIndex = 0;
+            this.rbActive.TabIndex = 4;
             this.rbActive.TabStop = true;
             this.rbActive.Text = "ACTIVADO";
             this.rbActive.UseVisualStyleBackColor = true;
@@ -294,21 +294,14 @@
             this.cbPrivilegio.Location = new System.Drawing.Point(430, 68);
             this.cbPrivilegio.Name = "cbPrivilegio";
             this.cbPrivilegio.Size = new System.Drawing.Size(148, 21);
-            this.cbPrivilegio.TabIndex = 37;
-            // 
-            // txtCedula
-            // 
-            this.txtCedula.Location = new System.Drawing.Point(135, 139);
-            this.txtCedula.Name = "txtCedula";
-            this.txtCedula.Size = new System.Drawing.Size(169, 20);
-            this.txtCedula.TabIndex = 32;
+            this.cbPrivilegio.TabIndex = 3;
             // 
             // txtApellidos
             // 
-            this.txtApellidos.Location = new System.Drawing.Point(135, 103);
+            this.txtApellidos.Location = new System.Drawing.Point(136, 103);
             this.txtApellidos.Name = "txtApellidos";
             this.txtApellidos.Size = new System.Drawing.Size(169, 20);
-            this.txtApellidos.TabIndex = 30;
+            this.txtApellidos.TabIndex = 1;
             // 
             // label1
             // 
@@ -325,12 +318,20 @@
             this.txtNombre.Location = new System.Drawing.Point(135, 67);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(169, 20);
-            this.txtNombre.TabIndex = 29;
+            this.txtNombre.TabIndex = 0;
             // 
             // timer1
             // 
             this.timer1.Interval = 30000;
             this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
+            // 
+            // txtCedula
+            // 
+            this.txtCedula.Location = new System.Drawing.Point(135, 139);
+            this.txtCedula.Mask = "000-0000000-0";
+            this.txtCedula.Name = "txtCedula";
+            this.txtCedula.Size = new System.Drawing.Size(168, 20);
+            this.txtCedula.TabIndex = 2;
             // 
             // frmEditarUsuario
             // 
@@ -365,7 +366,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.PictureBox btnCancel;
         private System.Windows.Forms.PictureBox btnSave;
-        private System.Windows.Forms.TextBox txtCedula;
         private System.Windows.Forms.TextBox txtApellidos;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtNombre;
@@ -384,5 +384,6 @@
         private System.Windows.Forms.TextBox txtPrivilegio;
         private System.Windows.Forms.TextBox txtNombreUsuario;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.MaskedTextBox txtCedula;
     }
 }
